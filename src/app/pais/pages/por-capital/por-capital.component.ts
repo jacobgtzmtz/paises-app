@@ -17,13 +17,6 @@ export class PorCapitalComponent implements OnInit {
   ngOnInit(): void {}
 
   /**
-   * sugerencias
-termino:string   */
-  public sugerencias(termino: string): void {
-    console.log(termino);
-  }
-
-  /**
    * buscar
    */
   public buscar(termino: string): void {
@@ -37,5 +30,12 @@ termino:string   */
         this.paises = [];
       }
     );
+  }
+
+  /**
+   * sugerencias
+termino:string   */
+  public sugerencias(termino: string): void {
+    console.log(termino);
   }
 }

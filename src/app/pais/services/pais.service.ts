@@ -17,7 +17,7 @@ export class PaisService {
       'access_key',
       '2969ae60178eb4d57274658cb503fd04'
     );
-    //return this.$http.get<Country[]>(url, {params});
+    return this.$http.get<Country[]>(url, {params});
     return of([
       { alpha2Code: '123', name: 'Mexico', capital: 'DF', population: 123456 },
     ]);
@@ -43,18 +43,41 @@ termino: string : Observable<Country[]>  */
     ]);
   }
 
-    /**
+  /**
    * buscarPorRegion
 termino: string : Observable<Country[]>  */
-public buscarPorRegion(termino: string): Observable<Country[]> {
-  const url = this.restAPI + 'region/' + termino;
-  const params = new HttpParams().set(
-    'access_key',
-    '2969ae60178eb4d57274658cb503fd04'
-  );
-   return this.$http.get<Country[]>(url, {params});
-  // return of([{alpha2Code: '123',name: 'Mexico',capital: 'CDMX',population: 123456,},]);
-}
+  public buscarPorRegion(termino: string): Observable<Country[]> {
+    const url = this.restAPI + 'region/' + termino;
+    const params = new HttpParams().set(
+      'access_key',
+      '2969ae60178eb4d57274658cb503fd04'
+    );
+    // return this.$http.get<Country[]>(url, {params});
+    return of([
+      {
+        alpha2Code: '123',
+        name: 'Mexico',
+        capital: 'CDMX',
+        population: 123456,
+      },
+    ]);
+  }
 
-
+  /**
+   * buscarPorRegion
+termino: string : Observable<Country>  */
+  public buscarPaisPorAlphaCode(code: string): Observable<Country> {
+    const url = this.restAPI + 'alpha/' + code;
+    const params = new HttpParams().set(
+      'access_key',
+      '2969ae60178eb4d57274658cb503fd04'
+    );
+    // return this.$http.get<Country>(url, {params});
+    return of({
+      alpha2Code: '123',
+      name: 'Mexico',
+      capital: 'CDMX',
+      population: 123456,
+    });
+  }
 }

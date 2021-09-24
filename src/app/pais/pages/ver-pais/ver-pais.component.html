@@ -1,1 +1,16 @@
-<p>ver-pais works!</p>
+<div class="alert alertinfo" *ngIf="!pais; else divPais">Cargando información...</div>
+
+<ng-template #divPais>
+  <div class="row" *ngIf="pais">
+    <div class="col-12">
+      <h2>
+        País: <small>{{ pais.name }}</small>
+      </h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      {{pais | json}}
+    </div>
+  </div>
+</ng-template>
