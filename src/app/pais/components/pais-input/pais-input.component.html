@@ -1,3 +1,3 @@
 <form (ngSubmit)="buscar()" autocomplete="off">
-  <input type="text" name="termino" id="termino" placeholder="Buscar país..." class="form-control" [(ngModel)]="termino" (input) = "onKeyPress()">
+  <input type="text" name="termino" id="termino" [placeholder]="placeHolder" class="form-control" [(ngModel)]="termino" (input) = "onKeyPress()">
 </form>
